@@ -1,0 +1,23 @@
+name: Teste do Runner
+
+on:
+  push:
+
+jobs:
+  teste:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Informacoes do servidor
+        run: |
+          echo "Runner funcionando!"
+          whoami
+          hostname
+          uname -a
+
+      - name: Testar arquivos
+        run: |
+          ls -lah
